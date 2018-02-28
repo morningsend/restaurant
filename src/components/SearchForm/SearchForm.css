@@ -1,0 +1,17 @@
+.search-form {
+    box-sizing: border-box;
+    padding: 24px;
+
+}
+.search-form hr {
+    border: .5px solid hsl(0, 0%, 94%);
+}
+.search-form label {
+    width: 100%;
+}
+.search-form input {
+    width: 100%;
+}
+.search-form button {
+
+}
