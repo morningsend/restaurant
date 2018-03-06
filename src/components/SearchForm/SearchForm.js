@@ -6,28 +6,35 @@ export class SearchForm extends React.Component {
 
     static propTypes = {
         onSubmit: PropTypes.func,
-        disabled: PropTypes.bool
+        disabled: PropTypes.bool,
+        locations: PropTypes.arrayOf(PropTypes.string)
     }
     constructor(props) {
         super(props)
         this.state = {
             authToken: 'X2IY3ITHMO35CE5AX2E5DWZXHWRTBS2HOTIPVOTRGFDXHVJP',
             searchTerm: 'sushi',
-            location: 'london'
+            location: this.props.locations ? this.props.locations[0] : 'london',
         }
 
         this.handleFormSubmit = this.handleFormSubmit.bind(this)
         this.handleAuthTokenTyping = this.handleAuthTokenTyping.bind(this)
         this.handleSearchTermTyping = this.handleSearchTermTyping.bind(this)
+        this.handleSelectLocation = this.handleSelectLocation.bind(this)
+    }
+    handleSelectLocation(event) {
+        this.setState({
+            location: event.target.value
+        })
     }
     handleFormSubmit(e) {
         e.preventDefault()
-        console.log('submitting form')
 
         if(typeof this.props.onSubmit === 'function') {
             this.props.onSubmit({
                 authToken: this.state.authToken,
-                query: this.state.searchTerm
+                query: this.state.searchTerm,
+                near: this.state.location
             })
         }
     }
@@ -65,6 +72,17 @@ export class SearchForm extends React.Component {
                     onChange={this.handleSearchTermTyping}
                     required
                     />
+                <label htmlFor='location-near'>Near</label>
+                <select
+                    id='location-near'
+                    disabled={!this.props.locations}
+                    onChange={this.handleSelectLocation}
+                    value={this.state.location}
+                    >
+                    {
+                        this.props.locations.map(l => <option value={l} key={l}>{l}</option>)
+                    }
+                </select>
                 <button type='submit' disabled={disabled}>Go</button>
             </form>
         )

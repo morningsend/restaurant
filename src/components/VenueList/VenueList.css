@@ -1,0 +1,23 @@
+ul.venue-list {
+    padding: 0px;
+    width: 100%;
+}
+li.venue-item {
+    list-style-type: none;
+    border: 1px solid #efefef;
+    height: 60px;
+    font-size: 14px;
+    padding: 10px;
+    
+}
+
+li.venue-item:hover {
+    background-color: #999;
+}
+li.venue-item.selected {
+    background-color: #444;
+}
+li.venue-item p {
+    font-size: 14px;
+    margin: 0px;
+}

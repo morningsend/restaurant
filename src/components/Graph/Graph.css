@@ -1,0 +1,46 @@
+.graph-container {
+
+}
+
+.graph-container .node {
+    fill: #445599;
+    stroke: #ccc;
+    stroke-width: 2px;
+    transform-origin: center;
+}
+
+div.help {
+    color: #efefef;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.graph-container .edge {
+    stroke: white;
+}
+.graph-container .node:hover {
+    fill: #4455ff;
+}
+.graph-container .graph {
+    transform-origin: center;
+    transition: transform 0.3s ease-out;
+}
+.graph-wrapper {
+    position: relative;
+}
+.graph-wrapper .summary {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 24px;
+    background-color: #efefef;
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, .34);
+}
+
+.graph-container line.edge {
+
+}
+
+.graph-container line.edge.selected {
+    stroke-width: 3px;
+}

@@ -1,6 +1,5 @@
 .search-form {
     box-sizing: border-box;
-    padding: 24px;
 
 }
 .search-form hr {
@@ -10,6 +9,9 @@
     width: 100%;
 }
 .search-form input {
+    width: 100%;
+}
+.search-form select {
     width: 100%;
 }
 .search-form button {

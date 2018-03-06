@@ -1,3 +1,7 @@
 import { Venues } from './Venues'
+import { VenueGraph } from './VenueGraph'
 
-export { Venues }
+export {
+    Venues,
+    VenueGraph
+}

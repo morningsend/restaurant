@@ -1,0 +1,7 @@
+.confirmation-container {
+    position: fixed;
+    bottom: 0px;
+    background-color: #339933;
+    width: 320px;
+    padding: 10px;
+}
